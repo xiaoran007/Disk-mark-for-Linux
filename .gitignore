@@ -6,6 +6,7 @@
 
 # C project
 # Prerequisites
+build
 *.d
 
 # Object files
