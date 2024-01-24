@@ -3,7 +3,7 @@
 double time_diff(struct timeval start, struct timeval end){
     long seconds = end.tv_sec - start.tv_sec;
     long useconds = end.tv_usec - start.tv_usec;
-    double time_use = (double) seconds + (double) useconds / 10e6;
+    double time_use = (double) seconds + (double) useconds / 1000000;
     return time_use;
 }
 
