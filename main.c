@@ -8,11 +8,14 @@
 #include <limits.h>
 #include <fcntl.h>
 
-int main() {
+int main(int argc, char* argv[]) {
+    int size_times = 1024;
+    if (argc == 2) {
+        size_times = atoi(argv[1]);
+    }
     printf("start\n");
-    int fd = open("test.dat", O_WRONLY|O_CREAT|O_SYNC|O_TRUNC, 0666);
+    int fd = open("test.datL", O_WRONLY|O_CREAT|O_SYNC|O_TRUNC, 0666);
     DISABLE_BUFFER;
-    int size_times = 128;
     char* buf;
     buf = (char*) malloc(sizeof(char) * DEFAULT_BLOCK_SIZE*size_times);
     prepare_buffer(buf, size_times);
@@ -21,11 +24,9 @@ int main() {
     printf("speed: %lf\n", size_times/time_w);
     fsync(fd);
 
-
     close(fd);
 
-
-    int fd2 = open("test.dat", O_RDONLY|O_SYNC, 0666);
+    int fd2 = open("test.datL", O_RDONLY|O_SYNC, 0666);
     fsync(fd2);
     DISABLE_BUFFER;
     lseek(fd2, 0, SEEK_SET); // Seek to start to read
