@@ -28,6 +28,9 @@ gui: init $(GUI_OBJECTS)
 $(GUI_OBJECTS): %.o: %.c
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ `pkg-config --cflags gtk4` `pkg-config --libs gtk4`
 
+gui-test: init gui
+	cd build; ./gui
+
 .PHONY : clean
 clean:
 	-rm -r $(OUTPUT_DIR)
