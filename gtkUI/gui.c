@@ -23,12 +23,20 @@ static void activate(GtkApplication *app, gpointer user_data){
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
     gtk_window_set_application(GTK_WINDOW(window), app);
 
-    GtkWidget *progressbar1, *progressbar2;
+    GtkWidget *progressbar1, *progressbar2, *progressbar3, *progressbar4, *progressbar5, *progressbar6, *progressbar7, *progressbar8;
     progressbar1 = GTK_WIDGET(gtk_builder_get_object(builder, "p1"));
     progressbar2 = GTK_WIDGET(gtk_builder_get_object(builder, "p2"));
+    progressbar3 = GTK_WIDGET(gtk_builder_get_object(builder, "p3"));
+    progressbar4 = GTK_WIDGET(gtk_builder_get_object(builder, "p4"));
+    progressbar5 = GTK_WIDGET(gtk_builder_get_object(builder, "p5"));
+    progressbar6 = GTK_WIDGET(gtk_builder_get_object(builder, "p6"));
+    progressbar7 = GTK_WIDGET(gtk_builder_get_object(builder, "p7"));
+    progressbar8 = GTK_WIDGET(gtk_builder_get_object(builder, "p8"));
 
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar1), 0.5);
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar2), 0.5);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar7), 0.3);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar8), 0.8);
+
+    
 
     GtkCssProvider *css_provider = gtk_css_provider_new();
     gtk_css_provider_load_from_resource(GTK_CSS_PROVIDER(css_provider), "/tech/xiaoran/dml/style.css");
