@@ -9,7 +9,7 @@ OBJECTS += utime.o diskio.o
 
 GUI_OBJECTS = gui.o
 
-RESOURCES_FILES = ui.xml pgb.css
+RESOURCES_FILES = ui.xml style.css
 
 .PHONY : init
 init:

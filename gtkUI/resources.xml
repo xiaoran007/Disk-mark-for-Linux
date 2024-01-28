@@ -2,6 +2,6 @@
 <gresources>
     <gresource prefix="/tech/xiaoran/dml">
         <file>ui.xml</file>
-        <file>pgb.css</file>
+        <file>style.css</file>
     </gresource>
 </gresources>
