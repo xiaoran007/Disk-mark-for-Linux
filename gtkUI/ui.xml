@@ -2,19 +2,45 @@
 <interface>
     <object class="GtkApplicationWindow" id="window">
         <property name="title">DiskMark for Linux</property>
-        <property name="default-width">500</property>
+        <property name="default-width">600</property>
         <property name="default-height">400</property>
+        <property name="resizable">FALSE</property>
         <child>
-            <object class="GtkBox">
-                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+            <object class="GtkGrid">
+                <property name="row-spacing">10</property>
+                <property name="column-spacing">10</property>
+                <property name="row-homogeneous">FALSE</property>
+                <property name="column-homogeneous">TRUE</property>
+                <!-- row 01 -->
+                <child>
+                    <object class="GtkButton" id="button1">
+                        <property name="label">SEQ1M&#10;  Q8T1</property>
+                        <property name="css-classes">mode_btn</property>
+                        <layout>
+                            <property name="column">0</property>
+                            <property name="row">0</property>
+                            <property name="column-span">4</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                    </object>
+                </child>
                 <child>
                     <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">4</property>
+                            <property name="row">0</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
                         <child>
                             <object class="GtkProgressBar" id="p1">
+                                <property name="fraction">0.6</property>
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel" id="my_label">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">LOAD SPEED</property>
                                 <property name="css-classes">my_label</property>
                             </object>
@@ -22,17 +48,206 @@
                     </object>
                 </child>
                 <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">16</property>
+                            <property name="row">0</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p2">
+                                <property name="fraction">0.0</property>
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <!-- row 02 -->
+                <child>
                     <object class="GtkButton">
-                        <property name="label">Btn</property>
+                        <property name="label">SEQ1M&#10;  Q1T1</property>
+                        <property name="css-classes">mode_btn</property>
+                        <layout>
+                            <property name="column">0</property>
+                            <property name="row">2</property>
+                            <property name="column-span">4</property>
+                            <property name="row-span">2</property>
+                        </layout>
                     </object>
                 </child>
                 <child>
-                    <object class="GtkProgressBar" id="p2">
-                        <property name="text">Test</property>
-                        <property name="show-text">TRUE</property>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">4</property>
+                            <property name="row">2</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p3">
+                                <property name="fraction">0.0</property>
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
+                <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">16</property>
+                            <property name="row">2</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p4">
+                                <property name="fraction">0.0</property>
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <!-- row 03 -->
+                <child>
+                    <object class="GtkButton">
+                        <property name="label">RND4K&#10; Q32T1</property>
+                        <property name="css-classes">mode_btn</property>
+                        <layout>
+                            <property name="column">0</property>
+                            <property name="row">4</property>
+                            <property name="column-span">4</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">4</property>
+                            <property name="row">4</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p5">
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">16</property>
+                            <property name="row">4</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p6">
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <!-- row 04 -->
+                <child>
+                    <object class="GtkButton">
+                        <property name="label">RND4K&#10;  Q1T1</property>
+                        <property name="css-classes">mode_btn</property>
+                        <layout>
+                            <property name="column">0</property>
+                            <property name="row">6</property>
+                            <property name="column-span">4</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">4</property>
+                            <property name="row">6</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p7">
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkOverlay">
+                        <layout>
+                            <property name="column">16</property>
+                            <property name="row">6</property>
+                            <property name="column-span">12</property>
+                            <property name="row-span">2</property>
+                        </layout>
+                        <child>
+                            <object class="GtkProgressBar" id="p8">
+                            </object>
+                        </child>
+                        <child type="overlay">
+                            <object class="GtkLabel">
+                                <property name="halign">GTK_ALIGN_END</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                                <property name="label">LOAD SPEED</property>
+                                <property name="css-classes">my_label</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+            </object>  
         </child>
     </object>
 </interface>
