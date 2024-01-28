@@ -10,17 +10,19 @@ progressbar > trough {
 
 progressbar > trough > progress {
     min-height: 80px;
-    background-color: greenyellow;
+    background-image: linear-gradient(white 4%, rgb(160, 226, 89) 25%, rgb(128, 214, 66) 50%, rgb(160, 226, 89) 75%, white);
+    border-radius: 4px;
+    border-color: rgb(219, 214, 212);
 }
 
 progressbar > text {
     font-style: italic;
     font-size: xx-large;
-    color: cornflowerblue;
+    color: wheat;
 }
 
 .my_label {
     font-style: italic;
     font-size: xx-large;
-    color: cornflowerblue;
+    color: gray;
 }
