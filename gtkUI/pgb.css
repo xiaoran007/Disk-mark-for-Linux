@@ -26,3 +26,9 @@ progressbar > text {
     font-size: xx-large;
     color: gray;
 }
+
+#my_label {
+    font-style: italic;
+    font-size: xx-large;
+    color: gray;
+}

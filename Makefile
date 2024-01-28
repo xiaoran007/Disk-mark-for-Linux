@@ -30,6 +30,7 @@ $(GUI_OBJECTS): %.o: %.c
 
 gui-test: init gui
 	cp gtkUI/pgb.css $(OUTPUT_DIR)/pgb.css
+	cp gtkUI/ui.xml $(OUTPUT_DIR)/ui.xml
 	cd build; ./gui
 
 .PHONY : clean
