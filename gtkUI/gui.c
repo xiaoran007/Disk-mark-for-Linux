@@ -20,7 +20,8 @@ static void activate(GtkApplication *app, gpointer user_data){
     GtkBuilder *builder;
     GtkWidget *window;
 
-    builder = gtk_builder_new_from_file("ui.xml");
+    //builder = gtk_builder_new_from_file("ui.xml");
+    builder = gtk_builder_new_from_resource("/tech/xiaoran/dml/ui.xml");
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
     gtk_window_set_application(GTK_WINDOW(window), app);
 
@@ -32,7 +33,8 @@ static void activate(GtkApplication *app, gpointer user_data){
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar2), 0.5);
 
     GtkCssProvider *css_provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(GTK_CSS_PROVIDER(css_provider), "pgb.css");
+    //gtk_css_provider_load_from_path(GTK_CSS_PROVIDER(css_provider), "pgb.css");
+    gtk_css_provider_load_from_resource(GTK_CSS_PROVIDER(css_provider), "/tech/xiaoran/dml/pgb.css");
 
     GtkStyleContext *context = gtk_widget_get_style_context(window);
     gtk_style_context_add_provider_for_display(gtk_style_context_get_display(context), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
