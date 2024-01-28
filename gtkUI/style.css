@@ -1,15 +1,19 @@
+grid {
+    margin: 10px;
+}
+
 progressbar {
-    min-height: 100px;
-    margin-top: 10px;
+    min-height: 50px;
+    margin-top: 0px;
 }
 
 progressbar > trough {
-    min-height: 80px;
+    min-height: 50px;
     background-color: white;
 }
 
 progressbar > trough > progress {
-    min-height: 80px;
+    min-height: 50px;
     background-image: linear-gradient(white 4%, rgb(160, 226, 89) 25%, rgb(128, 214, 66) 50%, rgb(160, 226, 89) 75%, white);
     border-radius: 4px;
     border-color: rgb(219, 214, 212);
@@ -31,4 +35,16 @@ progressbar > text {
     font-style: italic;
     font-size: xx-large;
     color: gray;
+}
+
+.mode_btn {
+    background-image: linear-gradient(white 4%, rgb(160, 226, 89) 25%, rgb(128, 214, 66) 50%, rgb(160, 226, 89) 75%, white);
+}
+
+.mode_btn:hover {
+    background-image: linear-gradient(white 4%, rgb(133, 225, 68) 25%, rgb(162, 247, 97) 50%, rgb(133, 225, 68) 75%, white);
+}
+
+.mode_btn:active {
+    background-image: none;
 }
