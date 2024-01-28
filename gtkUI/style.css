@@ -26,19 +26,17 @@ progressbar > text {
 }
 
 .my_label {
-    font-style: italic;
-    font-size: xx-large;
-    color: gray;
+    font-size: x-large;
+    color: rgb(69, 69, 69);
+    font-weight: bold;
+    margin-right: 5px;
 }
 
-#my_label {
-    font-style: italic;
-    font-size: xx-large;
-    color: gray;
-}
+
 
 .mode_btn {
     background-image: linear-gradient(white 4%, rgb(160, 226, 89) 25%, rgb(128, 214, 66) 50%, rgb(160, 226, 89) 75%, white);
+    font-weight: bold;
 }
 
 .mode_btn:hover {
