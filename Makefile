@@ -29,6 +29,7 @@ $(GUI_OBJECTS): %.o: %.c
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ `pkg-config --cflags gtk4` `pkg-config --libs gtk4`
 
 gui-test: init gui
+	cp gtkUI/pgb.css $(OUTPUT_DIR)/pgb.css
 	cd build; ./gui
 
 .PHONY : clean
