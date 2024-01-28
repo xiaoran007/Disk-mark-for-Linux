@@ -12,6 +12,7 @@ build
 include
 *.d
 *.dat
+resources.c
 
 # Object files
 *.o
