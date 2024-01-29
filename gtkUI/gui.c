@@ -1,13 +1,16 @@
 #include "gui.h"
 
+static void startup(GtkApplication *app);
 static void activate(GtkApplication *app, gpointer user_data);
 static void btn(GtkWidget *widget, gpointer user_data);
+static void menuClicked(GSimpleAction *action, GVariant *parameter, gpointer user_data);
 
 int main(int argc, char *argv[]){
     GtkApplication *app;
     int status;
 
     app = gtk_application_new ("tech.xiaoran.dml", G_APPLICATION_DEFAULT_FLAGS);
+    g_signal_connect(app, "startup", G_CALLBACK (startup), NULL);
     g_signal_connect(app, "activate", G_CALLBACK (activate), NULL);
     status = g_application_run (G_APPLICATION (app), argc, argv);
     g_object_unref (app);
@@ -16,12 +19,32 @@ int main(int argc, char *argv[]){
 
 }
 
+static void startup(GtkApplication *app){
+    GtkBuilder *menubarBuilder;
+    menubarBuilder = gtk_builder_new_from_resource("/tech/xiaoran/dml/menubar.xml");
+
+    GSimpleAction *action_open, *action_quit;
+    action_open = g_simple_action_new("open", NULL);
+    action_quit = g_simple_action_new("quit", NULL);
+    g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(action_open));
+    g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(action_quit));
+    g_signal_connect(G_OBJECT(action_open), "activate", G_CALLBACK(menuClicked), NULL);
+    g_signal_connect(G_OBJECT(action_quit), "activate", G_CALLBACK(menuClicked), NULL);
+
+    gtk_application_set_menubar(app, G_MENU_MODEL(gtk_builder_get_object(menubarBuilder, "menubar")));
+    g_object_unref(menubarBuilder);
+}
+
 static void activate(GtkApplication *app, gpointer user_data){
     GtkBuilder *builder;
     GtkWidget *window;
+    
     builder = gtk_builder_new_from_resource("/tech/xiaoran/dml/ui.xml");
+    
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
+    
     gtk_window_set_application(GTK_WINDOW(window), app);
+    
 
     GtkWidget *progressbar1, *progressbar2, *progressbar3, *progressbar4, *progressbar5, *progressbar6, *progressbar7, *progressbar8;
     progressbar1 = GTK_WIDGET(gtk_builder_get_object(builder, "p1"));
@@ -69,4 +92,8 @@ static void btn(GtkWidget *widget, gpointer user_data){
         fraction = 0.0;
     }
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(user_data), fraction);
+}
+
+static void menuClicked(GSimpleAction *action, GVariant *parameter, gpointer user_data){
+    g_print("Menu clicked, action: %s\n", g_action_get_name(G_ACTION(action)));
 }

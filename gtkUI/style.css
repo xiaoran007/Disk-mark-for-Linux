@@ -5,6 +5,7 @@ grid {
 progressbar {
     min-height: 50px;
     margin-top: 0px;
+    min-width: 250px;
 }
 
 progressbar > trough {
@@ -30,6 +31,14 @@ progressbar > text {
     color: rgb(69, 69, 69);
     font-weight: bold;
     margin-right: 5px;
+}
+
+.model_label {
+    font-size: x-large;
+    color: black;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 
