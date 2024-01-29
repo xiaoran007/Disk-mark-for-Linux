@@ -114,11 +114,11 @@
                         </layout>
                         <child>
                             <object class="GtkProgressBar" id="p1">
-                                <property name="fraction">0.6</property>
+                                <property name="fraction">0.0</property>
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl1">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -141,7 +141,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl2">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -178,7 +178,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl3">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -201,7 +201,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl4">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -237,7 +237,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl5">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -259,7 +259,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl6">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -295,7 +295,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl7">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -317,7 +317,7 @@
                             </object>
                         </child>
                         <child type="overlay">
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="pl8">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
                                 <property name="label">0.00</property>
@@ -329,7 +329,7 @@
 
                 <child>
                     <object class="GtkLabel">
-                        <property name="label">Disk model</property>
+                        <property name="label">VMware Virtual NVMe Disk</property>
                         <property name="halign">GTK_ALIGN_START</property>
                         <property name="valign">GTK_ALIGN_CENTER</property>
                         <property name="css-classes">model_label</property>

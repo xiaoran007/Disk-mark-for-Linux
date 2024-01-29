@@ -4,6 +4,8 @@ static void startup(GtkApplication *app);
 static void activate(GtkApplication *app, gpointer user_data);
 static void btn(GtkWidget *widget, gpointer user_data);
 static void menuClicked(GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void handleModeButtonClick(GtkWidget *widget, gpointer user_data);
+void* subthread(void *arg);
 
 int main(int argc, char *argv[]){
     GtkApplication *app;
@@ -49,33 +51,31 @@ static void activate(GtkApplication *app, gpointer user_data){
     GtkWidget *progressbar1, *progressbar2, *progressbar3, *progressbar4, *progressbar5, *progressbar6, *progressbar7, *progressbar8;
     progressbar1 = GTK_WIDGET(gtk_builder_get_object(builder, "p1"));
     progressbar2 = GTK_WIDGET(gtk_builder_get_object(builder, "p2"));
-    progressbar3 = GTK_WIDGET(gtk_builder_get_object(builder, "p3"));
-    progressbar4 = GTK_WIDGET(gtk_builder_get_object(builder, "p4"));
-    progressbar5 = GTK_WIDGET(gtk_builder_get_object(builder, "p5"));
-    progressbar6 = GTK_WIDGET(gtk_builder_get_object(builder, "p6"));
-    progressbar7 = GTK_WIDGET(gtk_builder_get_object(builder, "p7"));
-    progressbar8 = GTK_WIDGET(gtk_builder_get_object(builder, "p8"));
 
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar7), 0.0);
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar8), 0.0);
+    GtkWidget *label1, *label2;
+    label1 = GTK_WIDGET(gtk_builder_get_object(builder, "pl1"));
+    label2 = GTK_WIDGET(gtk_builder_get_object(builder, "pl2"));
+    
+    mode_data *seq;
+    seq = (mode_data*) malloc(sizeof(mode_data));
+    seq->readProgressBar = progressbar1;
+    seq->writeProgressBar = progressbar2;
+    seq->readLabel = label1;
+    seq->writeLabel = label2;
+    seq->mode = "SEQ";
 
-    GtkWidget *btn1, *btn2, *btn3, *btn4;
+    GtkWidget *btn1;
     btn1 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button1"));
-    btn2 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button2"));
-    btn3 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button3"));
-    btn4 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button4"));
-
-    g_signal_connect(btn1, "clicked", G_CALLBACK(btn), progressbar1);
-
     
 
+    g_signal_connect(btn1, "clicked", G_CALLBACK(handleModeButtonClick), seq);
+
+    
     GtkCssProvider *css_provider = gtk_css_provider_new();
     gtk_css_provider_load_from_resource(GTK_CSS_PROVIDER(css_provider), "/tech/xiaoran/dml/style.css");
 
     GtkStyleContext *context = gtk_widget_get_style_context(window);
     gtk_style_context_add_provider_for_display(gtk_style_context_get_display(context), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
-    
-    
 
     g_object_unref(css_provider);
     g_object_unref(builder);
@@ -96,4 +96,25 @@ static void btn(GtkWidget *widget, gpointer user_data){
 
 static void menuClicked(GSimpleAction *action, GVariant *parameter, gpointer user_data){
     g_print("Menu clicked, action: %s\n", g_action_get_name(G_ACTION(action)));
+}
+
+static void handleModeButtonClick(GtkWidget *widget, gpointer user_data){
+    mode_data *data = (mode_data*) user_data;
+    g_print("Mode: %s\n", data->mode);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(data->readProgressBar), 0.0);
+    gtk_label_set_label(GTK_LABEL(data->readLabel), "0.00");
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(data->writeProgressBar), 0.0);
+    gtk_label_set_label(GTK_LABEL(data->writeLabel), "0.00");
+    pthread_t thread;
+    pthread_create(&thread, NULL, subthread, user_data);
+}
+
+void* subthread(void *arg){
+    mode_data *data = (mode_data*) arg;
+    sleep(1);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(data->readProgressBar), 0.88);
+    gtk_label_set_label(GTK_LABEL(data->readLabel), "892.63");
+    sleep(1);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(data->writeProgressBar), 0.66);
+    gtk_label_set_label(GTK_LABEL(data->writeLabel), "636.23");
 }
