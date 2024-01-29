@@ -27,6 +27,17 @@
                 </child>
                 <child>
                     <object class="GtkDropDown" id="dropDown1">
+                        <property name="model">
+                            <object class="GtkStringList">
+                                <items>
+                                    <item>1</item>
+                                    <item>2</item>
+                                    <item>3</item>
+                                    <item>4</item>
+                                    <item>5</item>
+                                </items>
+                            </object>
+                        </property>
                         <layout>
                             <property name="column">4</property>
                             <property name="row">0</property>
@@ -37,6 +48,17 @@
                 </child>
                 <child>
                     <object class="GtkDropDown" id="dropDown2">
+                        <property name="model">
+                            <object class="GtkStringList">
+                                <items>
+                                    <item>128MiB</item>
+                                    <item>256MiB</item>
+                                    <item>521MiB</item>
+                                    <item>1GiB</item>
+                                    <item>2GiB</item>
+                                </items>
+                            </object>
+                        </property>
                         <layout>
                             <property name="column">6</property>
                             <property name="row">0</property>
@@ -47,6 +69,14 @@
                 </child>
                 <child>
                     <object class="GtkDropDown" id="dropDown3">
+                        <property name="model">
+                            <object class="GtkStringList">
+                                <items>
+                                    <item>/</item>
+                                    <item>./</item>
+                                </items>
+                            </object>
+                        </property>
                         <layout>
                             <property name="column">12</property>
                             <property name="row">0</property>
@@ -57,6 +87,15 @@
                 </child>
                 <child>
                     <object class="GtkDropDown" id="dropDown4">
+                        <property name="model">
+                            <object class="GtkStringList">
+                                <items>
+                                    <item>MB/s</item>
+                                    <item>GB/s</item>
+                                    <item>IOPS</item>
+                                </items>
+                            </object>
+                        </property>
                         <layout>
                             <property name="column">20</property>
                             <property name="row">0</property>
