@@ -13,7 +13,7 @@
                 <property name="column-homogeneous">TRUE</property>
                 <!-- row 01 -->
                 <child>
-                    <object class="GtkButton" id="button1">
+                    <object class="GtkButton" id="mode_button1">
                         <property name="label">SEQ1M&#10;  Q8T1</property>
                         <property name="css-classes">mode_btn</property>
                         <layout>
@@ -73,7 +73,7 @@
 
                 <!-- row 02 -->
                 <child>
-                    <object class="GtkButton">
+                    <object class="GtkButton" id="mode_button2">
                         <property name="label">SEQ1M&#10;  Q1T1</property>
                         <property name="css-classes">mode_btn</property>
                         <layout>
@@ -133,7 +133,7 @@
 
                 <!-- row 03 -->
                 <child>
-                    <object class="GtkButton">
+                    <object class="GtkButton" id="mode_button3">
                         <property name="label">RND4K&#10; Q32T1</property>
                         <property name="css-classes">mode_btn</property>
                         <layout>
@@ -191,7 +191,7 @@
 
                 <!-- row 04 -->
                 <child>
-                    <object class="GtkButton">
+                    <object class="GtkButton" id="mode_button4">
                         <property name="label">RND4K&#10;  Q1T1</property>
                         <property name="css-classes">mode_btn</property>
                         <layout>

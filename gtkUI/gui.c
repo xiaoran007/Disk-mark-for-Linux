@@ -36,6 +36,14 @@ static void activate(GtkApplication *app, gpointer user_data){
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar7), 0.3);
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar8), 0.8);
 
+    GtkWidget *btn1, *btn2, *btn3, *btn4;
+    btn1 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button1"));
+    btn2 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button2"));
+    btn3 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button3"));
+    btn4 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button4"));
+
+    g_signal_connect(btn1, "clicked", G_CALLBACK(btn), progressbar1);
+
     
 
     GtkCssProvider *css_provider = gtk_css_provider_new();
@@ -55,4 +63,10 @@ static void activate(GtkApplication *app, gpointer user_data){
 
 static void btn(GtkWidget *widget, gpointer user_data){
     g_print("Button clicked\n");
+    gdouble fraction = gtk_progress_bar_get_fraction(GTK_PROGRESS_BAR(user_data));
+    fraction += 0.1;
+    if (fraction > 1.0){
+        fraction = 0.0;
+    }
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(user_data), fraction);
 }
