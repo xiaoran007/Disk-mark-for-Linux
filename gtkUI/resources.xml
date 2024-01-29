@@ -2,6 +2,7 @@
 <gresources>
     <gresource prefix="/tech/xiaoran/dml">
         <file>ui.xml</file>
+        <file>menubar.xml</file>
         <file>style.css</file>
     </gresource>
 </gresources>
