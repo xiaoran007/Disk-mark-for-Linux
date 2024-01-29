@@ -4,7 +4,7 @@
         <property name="title">DiskMark for Linux</property>
         <property name="default-width">600</property>
         <property name="default-height">400</property>
-        <property name="resizable">FALSE</property>
+        <property name="resizable">TRUE</property>
         <property name="show-menubar">TRUE</property>
         <child>
             <object class="GtkGrid">
@@ -68,6 +68,7 @@
                 <child>
                     <object class="GtkLabel">
                         <property name="label">Read(MB/s)</property>
+                        <property name="css-classes">speed_label</property>
                         <layout>
                             <property name="column">4</property>
                             <property name="row">1</property>
@@ -79,6 +80,7 @@
                 <child>
                     <object class="GtkLabel">
                         <property name="label">Write(MB/s)</property>
+                        <property name="css-classes">speed_label</property>
                         <layout>
                             <property name="column">16</property>
                             <property name="row">1</property>
@@ -87,17 +89,6 @@
                         </layout>
                     </object>
                 </child>
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <!-- row 01 -->
@@ -130,8 +121,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -153,8 +144,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -190,8 +181,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -213,8 +204,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -249,8 +240,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -271,8 +262,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -307,8 +298,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>
@@ -329,8 +320,8 @@
                             <object class="GtkLabel">
                                 <property name="halign">GTK_ALIGN_END</property>
                                 <property name="valign">GTK_ALIGN_CENTER</property>
-                                <property name="label">LOAD SPEED</property>
-                                <property name="css-classes">my_label</property>
+                                <property name="label">0.00</property>
+                                <property name="css-classes">pb_label</property>
                             </object>
                         </child>
                     </object>

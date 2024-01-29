@@ -56,8 +56,8 @@ static void activate(GtkApplication *app, gpointer user_data){
     progressbar7 = GTK_WIDGET(gtk_builder_get_object(builder, "p7"));
     progressbar8 = GTK_WIDGET(gtk_builder_get_object(builder, "p8"));
 
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar7), 0.3);
-    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar8), 0.8);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar7), 0.0);
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progressbar8), 0.0);
 
     GtkWidget *btn1, *btn2, *btn3, *btn4;
     btn1 = GTK_WIDGET(gtk_builder_get_object(builder, "mode_button1"));

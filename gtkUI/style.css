@@ -26,14 +26,22 @@ progressbar > text {
     color: wheat;
 }
 
-.my_label {
-    font-size: x-large;
-    color: rgb(69, 69, 69);
+.pb_label {
+    font-size: xx-large;
+    color: black;
     font-weight: bold;
     margin-right: 5px;
 }
 
 .model_label {
+    font-size: x-large;
+    color: black;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.speed_label {
     font-size: x-large;
     color: black;
     font-weight: bold;
