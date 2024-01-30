@@ -7,7 +7,7 @@ vpath $(OBJECTS) build
 OBJECTS = main.o
 OBJECTS += utime.o diskio.o
 
-GUI_OBJECTS = gui.o
+GUI_OBJECTS = gui.o main.o
 
 RESOURCES_FILES = ui.xml menubar.xml style.css 
 

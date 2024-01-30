@@ -1,12 +1,7 @@
 #include "gui.h"
 
-static void startup(GtkApplication *app);
-static void activate(GtkApplication *app, gpointer user_data);
-static void btn(GtkWidget *widget, gpointer user_data);
-static void menuClicked(GSimpleAction *action, GVariant *parameter, gpointer user_data);
-static void handleModeButtonClick(GtkWidget *widget, gpointer user_data);
-void* subthread(void *arg);
 
+/*
 int main(int argc, char *argv[]){
     GtkApplication *app;
     int status;
@@ -20,8 +15,8 @@ int main(int argc, char *argv[]){
     return status;
 
 }
-
-static void startup(GtkApplication *app){
+*/
+void startup(GtkApplication *app){
     GtkBuilder *menubarBuilder;
     menubarBuilder = gtk_builder_new_from_resource("/tech/xiaoran/dml/menubar.xml");
 
@@ -37,7 +32,7 @@ static void startup(GtkApplication *app){
     g_object_unref(menubarBuilder);
 }
 
-static void activate(GtkApplication *app, gpointer user_data){
+void activate(GtkApplication *app, gpointer user_data){
     GtkBuilder *builder;
     GtkWidget *window;
     
